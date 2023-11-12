@@ -46,7 +46,7 @@ const Generator = () => {
 
    const newInterval =  setInterval(()=>{
       getLink();
-    },5000);
+    },7000);
 
     setIntervalId(newInterval);
     setshow(false);
