@@ -1,7 +1,7 @@
 import QRCode from "qrcode.react";
 import { useState } from "react";
 import axios from "axios";
-
+import { Button } from "@mui/material";
 const Generator = () => {
   const [link, setLink] = useState("");
   const [show, setshow] = useState(true);
@@ -46,7 +46,7 @@ const Generator = () => {
 
    const newInterval =  setInterval(()=>{
       getLink();
-    },7000);
+    },5000);
 
     setIntervalId(newInterval);
     setshow(false);
@@ -59,9 +59,9 @@ const Generator = () => {
         <input
           value={link}
           onChange={handleChange}
-          placeholder="Enter the link"
+          placeholder="Paste the link here"
         />
-        <button onClick={handleClick}>Generate</button>
+        <Button variant="contained" sx={{borderRadius:"0px"}} onClick={handleClick}>Generate</Button>
       </div>
       {show ? (
         <div className="empty-qr"></div>
